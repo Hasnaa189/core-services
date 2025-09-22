@@ -1,0 +1,366 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
+}
+
+/* NAVBAR */
+.navbar {
+  background: transparent; /* شفاف فوق */
+  transition: 0.3s ease;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* لما يحصل scroll */
+.navbar.scrolled {
+  background: #0b2545; /* نفس اللون الغامق بتاعك */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.navbar .logo img {
+  height: 60px;
+}
+
+/* روابط الناف */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f39c12; /* لون مميز */
+}
+
+/* زر الاتصال */
+.call-btn {
+  background: #f39c12;
+  color: #111 !important;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* زر القائمة (موبايل) */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #fff;
+  }
+}
+
+
+
+    /* ===== Hero ===== */
+    .hero{
+      min-height:80vh;
+      background-image: url('images/hero.jpg');
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      display:flex;
+      align-items:center;
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(11,37,69,0.55) 0%, rgba(11,37,69,0.6) 100%);
+    }
+    .hero .container{position:relative; z-index:2;}
+
+    /* ====== Section خدماتنا ====== */
+.services {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.services .section-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.services .section-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.service-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 18px;
+  color: #333;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.service-item.highlight {
+  background: #ff6600;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+
+
+/* ====== معرض الأعمال ====== */
+.portfolio {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.portfolio .section-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.portfolio .section-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+
+
+/* ====== من نحن ====== */
+.about {
+  padding: 70px 20px;
+  background: #f9f9f9;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-text {
+  flex: 1 1 500px;
+}
+
+.about-text .section-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.about-description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+}
+
+.about-list li {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.about-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #ff6600;
+  font-weight: bold;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+
+
+/* ====== تواصل معنا ====== */
+.contact {
+  padding: 60px 20px;
+  background: #0b2545;
+  color: #fff;
+  text-align: center;
+}
+
+.contact .section-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #f39c12;
+}
+
+.contact .section-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #ddd;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.contact-item a {
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 8px;
+  background: #f39c12;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.contact-item a:hover {
+  background: #f39c12;
+}
+
+
+
+
+/* ====== الأيقونات الثابتة ====== */
+/* ====== Floating Icons ====== */
+.floating-icons {
+  position: fixed;
+  top: 50%;
+  right: 15px; /* لو عايزة على الشمال خليها left:15px */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999;
+}
+
+.floating-icons a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #000; /* الببلونة سودة */
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.floating-icons a i {
+  font-size: 20px;
+}
+
+/* ألوان مميزة لكل أيقونة */
+.floating-icons a.phone i {
+  color: #128c7e; /* أخضر غامق للتليفون */
+}
+
+.floating-icons a.whatsapp i {
+  color: #25d366; /* أخضر واتساب */
+}
+
+.floating-icons a:hover {
+  transform: translateX(-5px);
+}
